@@ -75,4 +75,12 @@ body {
    top: 0%;
    position: absolute;
    z-index: 99;
+   .logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 8px #00ffff); /* Optional cool glow */
+  border-radius: 12px; /* Optional round corners */
+}
+
 }
