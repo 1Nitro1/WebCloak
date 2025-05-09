@@ -70,6 +70,7 @@ body {
       background-position: center calc(50% - 5%); /* Slight move up */
    }
    100% {
+      background-position: center calc(50% + 5%); /* Slight move down */
    }
 }
 
