@@ -71,7 +71,7 @@ body {
       background-position: center top; /* Back to top */
    }
    75% {
-      background-position: center calc(100% + 2%); /* Slight move up */
+      background-position: center calc(100% + 0.5%); /* Slight move up */
    }
    100% {
       background-position: center top; /* Back to top */
