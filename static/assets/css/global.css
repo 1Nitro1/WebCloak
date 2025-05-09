@@ -76,7 +76,7 @@ body {
    position: absolute;
    z-index: 99;
    .logo {
-  width: 120px;
+  width: 180px;
   height: auto;
   margin-bottom: 15px;
   filter: drop-shadow(0 0 8px #00ffff); /* Optional cool glow */
