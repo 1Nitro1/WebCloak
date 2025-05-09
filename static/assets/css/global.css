@@ -14,7 +14,7 @@
    --tab-active-background: #444; /* Accent Color for Tabs */
    --tab-inactive-background: ; /* Background Color for Tabs Not In Use */
    --slider-active-background: #4caf50; /* Active Slider Background Color */
-   --slider-inactive-background: #ccc; /*  Slider Background Color */
+   --slider-inactive-background: #ccc; /* Slider Background Color */
    --nav-image: url("/./assets/media/favicon/main.png"); /* Nav Logo */
    /* Text Variables */
    --text-primary: #fff; /* Primary Text Color */
@@ -57,6 +57,12 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
+   animation: moveBackground 15s linear infinite;
+}
+
+@keyframes moveBackground {
+   0% { background-position: 0 0; }
+   100% { background-position: 100% 100%; }
 }
 
 ::placeholder {
@@ -75,12 +81,78 @@ body {
    top: 0%;
    position: absolute;
    z-index: 99;
-   .logo {
-  width: 180px;
-  height: auto;
-  margin-bottom: 15px;
-  filter: drop-shadow(0 0 8px #00ffff); /* Optional cool glow */
-  border-radius: 12px; /* Optional round corners */
 }
 
+.title {
+   font-family: "Poppins", sans-serif;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+   transition: text-shadow 0.3s ease;
+}
+
+.title:hover {
+   text-shadow: 0 0 20px #ff6347, 0 0 30px #ff6347, 0 0 50px #ff6347;
+}
+
+.logo {
+   width: 180px;
+   height: auto;
+   margin-bottom: 15px;
+   filter: drop-shadow(0 0 8px #00ffff);
+   border-radius: 12px;
+}
+
+.search-home {
+   border: 2px solid transparent;
+   border-bottom: 2px solid var(--text-primary);
+   background: var(--background-input);
+   padding: 10px;
+   color: var(--text-primary);
+   font-size: 1.1rem;
+   transition: all 0.3s ease;
+}
+
+.search-home:focus {
+   border-bottom: 2px solid #4caf50;
+   outline: none;
+}
+
+button {
+   transition: transform 0.3s ease;
+}
+
+button:hover {
+   transform: scale(1.1);
+}
+
+a {
+   text-decoration: none;
+   color: var(--text-primary);
+   transition: color 0.3s ease;
+}
+
+a:hover {
+   color: var(--save-button);
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+.custom-footer {
+   background: var(--background-nav);
+   padding: 20px;
+   text-align: center;
+   color: var(--text-primary);
+}
+
+.custom-footer a {
+   color: var(--save-button);
+   text-decoration: none;
+}
+
+.custom-footer a:hover {
+   text-decoration: underline;
 }
