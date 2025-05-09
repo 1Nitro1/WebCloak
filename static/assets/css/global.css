@@ -57,7 +57,7 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
-   animation: moveBackground 30s ease-in-out infinite; /* Slower animation for more subtle movement */
+   animation: moveBackground 15s ease-in-out infinite; /* Faster animation */
 }
 
 @keyframes moveBackground {
