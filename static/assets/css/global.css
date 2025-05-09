@@ -53,7 +53,7 @@ body {
    text-decoration: none;
    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--background-image);
    height: 100%;
-   background-position: center top; /* Start at top */
+   background-position: center center; /* Start at the center */
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
@@ -62,19 +62,19 @@ body {
 
 @keyframes moveBackground {
    0% {
-      background-position: center top; /* Start at top */
+      background-position: center center; /* Start at the center */
    }
    25% {
-      background-position: center calc(100% - 2%); /* Slight move down */
+      background-position: center calc(50% + 2%); /* Slight move down */
    }
    50% {
-      background-position: center top; /* Back to top */
+      background-position: center center; /* Back to center */
    }
    75% {
-      background-position: center calc(100% + 0.5%); /* Slight move up */
+      background-position: center calc(50% - 2%); /* Slight move up */
    }
    100% {
-      background-position: center top; /* Back to top */
+      background-position: center center; /* Back to center */
    }
 }
 
@@ -169,4 +169,3 @@ html {
 .custom-footer a:hover {
    text-decoration: underline;
 }
-
