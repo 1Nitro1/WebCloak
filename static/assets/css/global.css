@@ -53,28 +53,28 @@ body {
    text-decoration: none;
    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--background-image);
    height: 100%;
-   background-position: center;
+   background-position: center center; /* Center the background */
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
-   animation: moveBackground 15s ease-in-out infinite;
+   animation: moveBackground 15s ease-in-out infinite; /* Apply the subtle animation */
 }
 
 @keyframes moveBackground {
    0% {
-      background-position: 0 0;
+      background-position: center center; /* Start at the center */
    }
    25% {
-      background-position: 0 -5%; /* Move up slightly */
+      background-position: center -3%; /* Move up slightly */
    }
    50% {
-      background-position: 0 0; /* Back to original position */
+      background-position: center center; /* Back to center */
    }
    75% {
-      background-position: 0 5%; /* Move down slightly */
+      background-position: center 3%; /* Move down slightly */
    }
    100% {
-      background-position: 0 0; /* Back to original position */
+      background-position: center center; /* Back to center */
    }
 }
 
