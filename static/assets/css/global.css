@@ -65,16 +65,16 @@ body {
       background-position: 0 0;
    }
    25% {
-      background-position: 100% 50%;
+      background-position: 50% -10%; /* Move up slightly */
    }
    50% {
-      background-position: 0 100%;
+      background-position: 0 0; /* Back to original position */
    }
    75% {
-      background-position: -100% 50%;
+      background-position: -50% 10%; /* Move down slightly */
    }
    100% {
-      background-position: 0 0;
+      background-position: 0 0; /* Back to original position */
    }
 }
 
