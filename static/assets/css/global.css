@@ -51,7 +51,7 @@
 body {
    font-family: "Inter", sans-serif;
    text-decoration: none;
-   background: var(--background-image);
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--background-image);
    height: 100%;
    background-position: center;
    background-repeat: no-repeat;
