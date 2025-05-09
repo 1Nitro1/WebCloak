@@ -57,7 +57,7 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
-   animation: moveBackground 15s ease-in-out infinite; /* Apply the subtle animation */
+   animation: moveBackground 30s ease-in-out infinite; /* Slower animation for more subtle movement */
 }
 
 @keyframes moveBackground {
@@ -65,13 +65,13 @@ body {
       background-position: center top; /* Start at top */
    }
    25% {
-      background-position: center calc(100% - 5%); /* Move slightly downward */
+      background-position: center calc(100% - 2%); /* Slight move down */
    }
    50% {
       background-position: center top; /* Back to top */
    }
    75% {
-      background-position: center calc(100% + 5%); /* Move slightly upward */
+      background-position: center calc(100% + 2%); /* Slight move up */
    }
    100% {
       background-position: center top; /* Back to top */
@@ -169,3 +169,4 @@ html {
 .custom-footer a:hover {
    text-decoration: underline;
 }
+
