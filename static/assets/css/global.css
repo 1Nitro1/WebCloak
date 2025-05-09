@@ -62,19 +62,19 @@ body {
 
 @keyframes moveBackground {
    0% {
-      background-position: center center; /* Start at the center */
+      background-position: center -1%; /* Start at the center */
    }
    25% {
       background-position: center -2%; /* Move up slightly */
    }
    50% {
-      background-position: center center; /* Back to center */
+      background-position: center -1%; /* Back to center */
    }
    75% {
       background-position: center 2%; /* Move down slightly */
    }
    100% {
-      background-position: center center; /* Back to center */
+      background-position: center -1%; /* Back to center */
    }
 }
 
