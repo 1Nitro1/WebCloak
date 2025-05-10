@@ -88,43 +88,33 @@ html {
    z-index: 99;
 }
 
-/* Title Styling */
+/* Title */
 .title {
-   font-family: "Poppins", sans-serif;
-   font-weight: 630;
-   text-transform: uppercase;
-   letter-spacing: 1.5px;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-   transition: text-shadow 0.3s ease;
-   position: relative;
-   z-index: 1; /* Added to ensure title stays on top */
+  font-family: Poppins, sans-serif;
+  font-weight: 630;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+  /* reserve glow space so hover never shifts layout */
+  text-shadow:
+    2px 2px 4px rgba(0,0,0,0.3),
+    0 0 50px rgba(208,170,255,0);
+  display: inline-block;
+  padding: 10px 0; /* prevents layout shift */
+  line-height: 1;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
 }
-
 .title:hover {
-   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
-   color: #d0aaff;
+  color: var(--d0aaff);
+  text-shadow:
+    0 0 20px var(--d0aaff),
+    0 0 30px var(--d0aaff),
+    0 0 50px var(--d0aaff);
 }
 
-/* Logo Styling */
-.logo {
-   width: 180px;
-   height: auto;
-   margin-bottom: 15px;
-   filter: drop-shadow(0 0 8px #00ffff);
-   border-radius: 12px;
-}
-
-/* Search Bar Styling */
-.search-home {
-   border: 2px solid transparent;
-   border-bottom: 2px solid var(--text-primary);
-   background: var(--background-input);
-   padding: 10px;
-   color: var(--text-primary);
-   font-size: 1.1rem;
-   transition: all 0.3s ease;
-   z-index: 0; /* Prevent search bar from being affected by title hover */
-}
+/* Search Bar */
+.search-container {
+  margin-top: 20px; /* space below title */
 
 .search-home:focus {
    border-bottom: 2px solid #4caf50;
