@@ -90,12 +90,12 @@ html {
 
 .title {
   font-weight: normal;
-  transition: text-shadow 0.3s ease, color 0.3s ease;
+  transition: text-shadow 0.2s ease, color 0.2s ease;
 }
 
 .title:hover {
   color: #d0aaff;
-  text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor;
+  text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
 }
 
    -webkit-font-smoothing: antialiased;
