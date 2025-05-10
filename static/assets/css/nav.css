@@ -1,165 +1,151 @@
-.material-symbols-outlined {
-   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-}
-
-.f-nav #icon-container {
-   display: flex;
-   align-items: center;
-}
-
-img {
-   width: 100%;
-   height: 100%;
-   padding-top: 5px;
-}
-
+/* Navbar Styles */
 .f-nav-container {
-   min-width: 5vw;
-   min-height: 10vh;
-   display: inline;
+   min-height: 20vh;  /* Adjusted to match new favicon size */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   background-color: var(--background-nav);
+   position: relative;
 }
 
 .f-nav {
-   top: 0;
-   letter-spacing: 2px;
-   font-size: 22px;
-   left: 0;
-   right: 0;
-   min-height: 10vh;
-   padding: 0 25px;
-   box-sizing: border-box;
-   background-color: var(--background-nav);
-   box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
-   -webkit-backdrop-filter: var(--backdrop-filter);
-   backdrop-filter: var(--backdrop-filter);
-   transition: 0.35s ease;
-   border-radius: 15px;
-   width: fill;
-   margin: 15px;
-   z-index: 100;
-   position: fixed;
-}
-
-.f-nav .icon:hover {
-   transform: translateY(-15%) scale(1.03);
-   font-weight: 800;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   max-width: 1200px;
+   padding: 20px;
 }
 
 .f-nav .icon {
-   position: absolute;
-   float: left;
-   text-transform: uppercase;
-   font-size: 30px;
-   font-family: "Inter", sans-serif;
+   height: 10vh;  /* Adjusted height */
+   top: 25%;      /* Vertically aligned */
+}
+
+/* Make the Favicon Clickable and go to Homepage */
+a#favicon-link {
+   display: inline-block;
    cursor: pointer;
+}
+
+a#favicon-link img {
+   width: 64px;  /* Double the original size */
+   height: 64px;
+   transition: filter 0.3s ease;
+}
+
+/* Hover Effect for Favicon */
+a#favicon-link img:hover {
+   filter: drop-shadow(0 0 10px #d0aaff);  /* Glowing effect on hover */
+}
+
+/* Title Styling */
+.title {
+   font-family: "Poppins", sans-serif;
+   font-weight: 630; /* Adjusted to make it bolder */
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   color: #fff;
+   text-shadow: 0 0 5px #d0aaff44; /* Subtle default glow */
+   transition: text-shadow 0.3s ease, color 0.3s ease;
+   display: inline-block;
+   padding: 10px 0;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.title:hover {
+   color: #d0aaff;
+   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff; /* Intense glow */
+}
+
+/* Logo Styling */
+.logo {
+   width: 180px;
+   height: auto;
+   margin-bottom: 15px;
+   filter: drop-shadow(0 0 8px #00ffff);
+   border-radius: 12px;
+}
+
+/* Search Bar Styling */
+.search-home {
+   border: 2px solid transparent;
+   border-bottom: 2px solid var(--text-primary);
+   background: var(--background-input);
+   padding: 10px;
    color: var(--text-primary);
-   font-weight: 600;
-   margin-left: 5px;
-   font-style: normal;
+   font-size: 1.1rem;
+   transition: all 0.3s ease;
+}
+
+.search-home:hover {
+   color: #d0aaff;
+   text-shadow: 0 0 5px #d0aaff, 0 0 15px #d0aaff, 0 0 35px #d0aaff; /* Intense glow */
+}
+
+.search-home:focus {
+   border-bottom: 2px solid #4caf50;
+   outline: none;
+   box-shadow: 0 0 10px rgba(208, 170, 255, 0.6); /* Subtle glow */
+}
+
+/* Navbar Search Button Styling */
+button {
+   transition: transform 0.3s ease;
+}
+
+button:hover {
+   transform: scale(1.1);
+}
+
+a {
    text-decoration: none;
-   transition: all 0.2s ease;
-   height: 5vh;
-   top: 18%;
+   color: var(--text-primary);
+   transition: color 0.3s ease;
 }
 
-.f-nav-right {
-   position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
-   text-transform: uppercase;
-   font-size: 18px;
-   color: var(--text-primary);
-   font-weight: 600;
-   right: 2%;
+a:hover {
+   color: var(--save-button);
 }
 
-.f-nav-right .navbar-link {
-   margin-left: 10px;
-   text-transform: uppercase;
-   cursor: pointer;
+/* Navbar Scrollbar */
+::-webkit-scrollbar {
+   width: 6px;
+   background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-track {
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   border-radius: 10px;
+   background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   background-color: var(--text-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background-color: var(--text-dark);
+}
+
+/* Footer Styles */
+.custom-footer {
+   background: var(--background-nav);
+   padding: 20px;
+   text-align: center;
    color: var(--text-primary);
-   font-weight: 800;
-   right: 2%;
-   font-family: "Inter", sans-serif;
-   font-style: normal;
+}
+
+.custom-footer a {
+   color: var(--save-button);
    text-decoration: none;
-   transition: all 0.2s ease;
-   transform: translateX(0%);
 }
 
-@media (orientation: portrait) {
-   .f-nav-right .navbar-link {
-      margin-left: 10px;
-      text-transform: uppercase;
-      font-size: 2.5vw;
-      cursor: pointer;
-      color: var(--text-primary);
-      font-weight: 800;
-      right: 2%;
-      font-family: "Inter", sans-serif;
-      font-style: normal;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      transform: translateX(0%);
-   }
-   .f-nav-right .navbar-link:hover {
-      text-transform: uppercase;
-      cursor: pointer;
-      font-weight: 800;
-      font-family: "Inter", sans-serif;
-      font-style: normal;
-      font-size: 3vw;
-      transform: translateX(-20%);
-   }
-}
-
-.f-nav-right .navbar-link:hover {
-   text-transform: uppercase;
-   cursor: pointer;
-   font-weight: 800;
-   font-family: "Inter", sans-serif;
-   font-style: normal;
-   font-size: 3vh;
-   transform: translateX(-20%);
-}
-
-.navbar-icon {
-   margin-right: 5px;
-   transition: all 0.2s ease;
-}
-
-.navbar-link {
-   margin-right: 5px;
-}
-
-.navbar-link:hover > .settings-icon {
-   animation: spin 0.5s;
-   animation-timing-function: cubic-bezier(0, 1.04, 0.91, 0.99);
-}
-
-@media (max-width: 768px) {
-   .f-nav-right .navbar-link an {
-      display: none;
-   }
-   .f-nav-right .fa-solid {
-      display: inline;
-   }
-   .f-nav-right .navbar-link {
-      font-size: 4.5vw;
-   }
-}
-
-@keyframes spin {
-   from {
-      transform: rotate(0deg);
-   }
-   to {
-      transform: rotate(360deg);
-   }
-}
-
-@media (orientation: portrait) {
-   img {
-      height: 40px;
-   }
+.custom-footer a:hover {
+   text-decoration: underline;
 }
