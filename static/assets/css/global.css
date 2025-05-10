@@ -95,7 +95,7 @@ body {
 
 .title {
     font-family: "Poppins", sans-serif;
-    font-weight: 660; /* Adjusted to make it bolder */
+    font-weight: 700; /* Adjusted to make it bolder */
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: #fff;
@@ -110,7 +110,7 @@ body {
 
 .title:hover {
     color: #d0aaff;
-    text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff; /* Intense glow */
+    text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 40px #d0aaff; /* Intense glow */
 }
 
 /* === Logo Styling === */
