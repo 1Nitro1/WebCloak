@@ -100,7 +100,8 @@ img {
     left: 20px;
     z-index: 999;
     position: relative; /* Allows positioning relative to its normal position */
-    top: -8px;         /* Adjust this value to move it up or down */
+    top: -8px /* Adjust this value to move it up or down */
+    left: 0;
 }
 
 }
