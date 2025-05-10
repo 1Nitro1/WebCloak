@@ -2,8 +2,8 @@
 body {
    margin: 0;
    font-family: "Poppins", sans-serif;
-   background-color: var(--background);
-   color: var(--text-primary);
+   background-color: #0f0f0f;
+   color: #e0e0e0;
 }
 
 /* === Fixed Navigation Bar === */
@@ -11,9 +11,9 @@ body {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   height: 70px; /* taller to fit the larger favicon */
+   height: 70px;
    padding: 0 20px;
-   background-color: var(--background-secondary);
+   background-color: #1a1a1a;
    position: sticky;
    top: 0;
    z-index: 100;
@@ -21,13 +21,14 @@ body {
 
 /* === Favicon Button === */
 #INImg {
-   width: 48px; /* 2x original size */
+   width: 48px;
    height: auto;
    filter: drop-shadow(0 0 8px #00ffff);
    border-radius: 12px;
    transition: filter 0.3s ease, transform 0.3s ease;
    cursor: pointer;
    display: block;
+   margin-top: 2px; /* Lift it higher to align with nav bar */
 }
 
 #INImg:hover {
@@ -38,10 +39,10 @@ body {
 /* === Title Styling === */
 .title {
    font-family: "Poppins", sans-serif;
-   font-weight: 700; /* Use bold upfront to match hover */
+   font-weight: 700;
    text-transform: uppercase;
    letter-spacing: 1.5px;
-   color: #fff;
+   color: #ffffff;
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
    transition: color 0.3s ease, text-shadow 0.3s ease;
    display: inline-block;
@@ -49,8 +50,10 @@ body {
    line-height: 1;
    position: relative;
    z-index: 1;
+   animation: waveFloat 2s ease-in-out infinite;
 }
 
+/* Prevent layout shift by setting a static font-weight */
 .title::before {
    content: attr(data-text);
    font-weight: 700;
@@ -60,21 +63,16 @@ body {
    display: block;
 }
 
-/* Hover glow effect */
 .title:hover {
    text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
    color: #d0aaff;
 }
 
-/* === Animated Floating Title Effect === */
+/* === Smooth Floating Animation === */
 @keyframes waveFloat {
    0% { transform: translateY(0); }
    50% { transform: translateY(-6px); }
    100% { transform: translateY(0); }
-}
-
-.title {
-   animation: waveFloat 2s ease-in-out infinite;
 }
 
 /* === Search Bar Styling === */
@@ -82,10 +80,10 @@ body {
    flex: 1;
    max-width: 400px;
    border: 2px solid transparent;
-   border-bottom: 2px solid var(--text-primary);
-   background: var(--background-input);
+   border-bottom: 2px solid #e0e0e0;
+   background: #121212;
    padding: 10px;
-   color: var(--text-primary);
+   color: #e0e0e0;
    font-size: 1.1rem;
    transition: box-shadow 0.3s ease, border-bottom 0.3s ease;
    z-index: 0;
@@ -95,5 +93,5 @@ body {
 .search-home:hover {
    outline: none;
    border-bottom: 2px solid #d0aaff;
-   box-shadow: 0 0 10px #d0aaff;
+   box-shadow: 0 0 8px #d0aaff;
 }
