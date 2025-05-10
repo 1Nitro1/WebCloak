@@ -115,13 +115,23 @@ body {
    color: #d0aaff;
    text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff; /* Intense glow */
 }
-
+/* Logo/ Favicon Button Styles */
 .logo {
-   width: 180px;
-   height: auto;
+   width: 60px; /* Set to a noticeable size */
+   height: 60px; /* Maintain aspect ratio */
    margin-bottom: 15px;
-   filter: drop-shadow(0 0 8px #00ffff);
-   border-radius: 12px;
+   filter: drop-shadow(0 0 8px #00ffff); /* Glow effect */
+   border-radius: 12px; /* Rounded corners */
+   position: absolute;
+   top: 20px; /* Distance from the top */
+   left: 20px; /* Distance from the left */
+   cursor: pointer; /* Makes it clickable */
+   transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
+}
+
+.logo:hover {
+   transform: scale(1.1); /* Slight enlarge effect on hover */
+   filter: drop-shadow(0 0 12px #00ffff); /* Stronger glow on hover */
 }
 
 .search-home {
