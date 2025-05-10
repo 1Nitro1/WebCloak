@@ -66,12 +66,8 @@ body {
    25% {
       background-position: center calc(50% + 20%); /* Slight move down */
    }
-   50% {
-   }
    75% {
       background-position: center calc(50% - 20%); /* Slight move up */
-   }
-   100% {
    }
 }
 
