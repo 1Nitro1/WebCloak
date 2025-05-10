@@ -2,8 +2,8 @@
 body {
    margin: 0;
    font-family: "Poppins", sans-serif;
-   background-color: #0f0f0f;
-   color: #e0e0e0;
+   background-color: var(--background-main); /* Normal background restored */
+   color: var(--text-primary);
 }
 
 /* === Fixed Navigation Bar === */
@@ -13,7 +13,7 @@ body {
    justify-content: space-between;
    height: 70px;
    padding: 0 20px;
-   background-color: #1a1a1a;
+   background-color: var(--background-secondary);
    position: sticky;
    top: 0;
    z-index: 100;
@@ -25,15 +25,14 @@ body {
    height: auto;
    filter: drop-shadow(0 0 8px #00ffff);
    border-radius: 12px;
-   transition: filter 0.3s ease, transform 0.3s ease;
+   transition: filter 0.3s ease;
    cursor: pointer;
    display: block;
-   margin-top: 2px; /* Lift it higher to align with nav bar */
+   margin-top: 6px; /* Adjust to center it in taskbar */
 }
 
 #INImg:hover {
    filter: drop-shadow(0 0 12px #00ffff);
-   transform: scale(1.05);
 }
 
 /* === Title Styling === */
@@ -44,23 +43,13 @@ body {
    letter-spacing: 1.5px;
    color: #ffffff;
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-   transition: color 0.3s ease, text-shadow 0.3s ease;
+   transition: text-shadow 0.3s ease, color 0.3s ease;
    display: inline-block;
    padding: 10px 0;
    line-height: 1;
    position: relative;
    z-index: 1;
    animation: waveFloat 2s ease-in-out infinite;
-}
-
-/* Prevent layout shift by setting a static font-weight */
-.title::before {
-   content: attr(data-text);
-   font-weight: 700;
-   visibility: hidden;
-   height: 0;
-   overflow: hidden;
-   display: block;
 }
 
 .title:hover {
@@ -71,7 +60,7 @@ body {
 /* === Smooth Floating Animation === */
 @keyframes waveFloat {
    0% { transform: translateY(0); }
-   50% { transform: translateY(-6px); }
+   50% { transform: translateY(-4px); }
    100% { transform: translateY(0); }
 }
 
@@ -80,10 +69,10 @@ body {
    flex: 1;
    max-width: 400px;
    border: 2px solid transparent;
-   border-bottom: 2px solid #e0e0e0;
-   background: #121212;
+   border-bottom: 2px solid var(--text-primary);
+   background: var(--background-input);
    padding: 10px;
-   color: #e0e0e0;
+   color: var(--text-primary);
    font-size: 1.1rem;
    transition: box-shadow 0.3s ease, border-bottom 0.3s ease;
    z-index: 0;
