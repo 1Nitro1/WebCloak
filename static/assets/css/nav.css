@@ -139,3 +139,62 @@ img {
 .navbar-link {
    margin-right: 5px;
 }
+
+.navbar-link:hover > .settings-icon {
+   animation: spin 0.5s;
+   animation-timing-function: cubic-bezier(0, 1.04, 0.91, 0.99);
+}
+
+/* Media Queries for Mobile Views */
+@media (max-width: 768px) {
+   .f-nav-right .navbar-link an {
+      display: none;
+   }
+
+   .f-nav-right .fa-solid {
+      display: inline;
+   }
+
+   .f-nav-right .navbar-link {
+      font-size: 4.5vw;
+   }
+}
+
+/* Spinner Animation for Settings Icon */
+@keyframes spin {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+/* Image Size Adjustment for Portrait */
+@media (orientation: portrait) {
+   img {
+      height: 40px;
+   }
+}
+
+/* Glowing Effect for Search Bar */
+.search-home {
+   border: 2px solid transparent;
+   border-bottom: 2px solid var(--text-primary);
+   background: var(--background-input);
+   padding: 10px;
+   color: var(--text-primary);
+   font-size: 1.1rem;
+   transition: all 0.3s ease;
+}
+
+.search-home:hover {
+   color: #d0aaff;
+   text-shadow: 0 0 5px #d0aaff, 0 0 15px #d0aaff, 0 0 35px #d0aaff;
+}
+
+.search-home:focus {
+   border-bottom: 2px solid #4caf50;
+   outline: none;
+   box-shadow: 0 0 10px rgba(208, 170, 255, 0.6);
+}
