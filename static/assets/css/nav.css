@@ -1,12 +1,11 @@
 /* Navbar Styles */
 .f-nav-container {
-   min-height: 20vh;  /* Adjusted to match the favicon size */
+   min-height: 20vh;
    display: flex;
    justify-content: center;
    align-items: center;
    padding: 20px;
    background-color: var(--background-nav);
-   position: relative;
 }
 
 .f-nav {
@@ -18,29 +17,14 @@
    padding: 20px;
 }
 
-/* Favicon Positioning and Size */
-#INImg {
-   position: absolute;
-   top: 10px;    /* Positioned to the top */
-   left: 10px;   /* Positioned to the left */
-   width: 32px;  /* 2x bigger than the default size (e.g., 16px) */
-   height: 32px; /* Maintain aspect ratio */
-   transition: filter 0.3s ease;
-}
-
-/* Hover Effect for Favicon */
-#INImg:hover {
-   filter: drop-shadow(0 0 10px #d0aaff);  /* Glowing effect on hover */
-}
-
 /* Title Styling */
 .title {
    font-family: "Poppins", sans-serif;
-   font-weight: 630; /* Adjusted to make it bolder */
+   font-weight: 630;
    text-transform: uppercase;
    letter-spacing: 1.5px;
    color: #fff;
-   text-shadow: 0 0 5px #d0aaff44; /* Subtle default glow */
+   text-shadow: 0 0 5px #d0aaff44;
    transition: text-shadow 0.3s ease, color 0.3s ease;
    display: inline-block;
    padding: 10px 0;
@@ -51,7 +35,7 @@
 
 .title:hover {
    color: #d0aaff;
-   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff; /* Intense glow */
+   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
 }
 
 /* Search Bar Styling */
@@ -67,13 +51,13 @@
 
 .search-home:hover {
    color: #d0aaff;
-   text-shadow: 0 0 5px #d0aaff, 0 0 15px #d0aaff, 0 0 35px #d0aaff; /* Intense glow */
+   text-shadow: 0 0 5px #d0aaff, 0 0 15px #d0aaff, 0 0 35px #d0aaff;
 }
 
 .search-home:focus {
    border-bottom: 2px solid #4caf50;
    outline: none;
-   box-shadow: 0 0 10px rgba(208, 170, 255, 0.6); /* Subtle glow */
+   box-shadow: 0 0 10px rgba(208, 170, 255, 0.6);
 }
 
 /* Navbar Search Button Styling */
