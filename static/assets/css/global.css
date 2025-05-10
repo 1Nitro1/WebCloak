@@ -1,174 +1,232 @@
 /* Global Variables */
 :root {
-  --background-image: url("/./assets/media/background/full-main.png");
-  --background-nav: rgba(255, 255, 255, 0.02);
-  --background-color: #222;
-  --background-input: #4545459e;
-  --text-primary: #fff;
-  --text-placeholder: #aaa;
-  --save-button: #4caf50;
-  --d0aaff: #d0aaff;
+   --background-image: url("/./assets/media/background/full-main.png");
+   --backdrop-filter: blur(10px) brightness(80%);
+   --background-nav: rgba(255, 255, 255, 0.02);
+   --background-color: #222;
+   --background-input: #4545459e;
+   --background-column: #353535;
+   --background-settings: #2a2a2a;
+   --background-buttons: #333;
+   --tab-active-background: #444;
+   --tab-inactive-background: ;
+   --slider-active-background: #4caf50;
+   --slider-inactive-background: #ccc;
+   --nav-image: url("/./assets/media/favicon/main.png");
+   --text-primary: #fff;
+   --text-dark: #555;
+   --text-placeholder: #aaa;
+   --save-button: #4caf50;
+   --reset-button: #f44336;
+   --import-button: #009688;
+   --export-button: #ea76cb;
 }
 
 /* Scrollbar Customization */
 ::-webkit-scrollbar {
-  width: 6px;
-  background-color: var(--background-color);
+   width: 6px;
+   background-color: var(--background-color);
 }
+
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  background-color: var(--background-color);
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   border-radius: 10px;
+   background-color: var(--background-color);
 }
+
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: var(--text-primary);
+   border-radius: 10px;
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   background-color: var(--text-primary);
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+   background-color: var(--text-dark);
 }
 
-/* Body & Background Animation */
+/* General Styles */
 body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    var(--background-image) center/cover fixed;
-  animation: waveBG 8s ease-in-out infinite;
+   font-family: "Inter", sans-serif;
+   text-decoration: none;
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--background-image);
+   height: 100%;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   animation: moveBackground 15s ease-in-out infinite; /* Faster animation */
 }
-@keyframes waveBG {
-  0%   { background-position: center 45%; }
-  25%  { background-position: center 50%; }
-  50%  { background-position: center 55%; }
-  75%  { background-position: center 50%; }
-  100% { background-position: center 45%; }
+
+@keyframes moveBackground {
+   0% { background-position: center center; }
+   25% { background-position: center calc(50% + 5%); }
+   50% { background-position: center center; }
+   75% { background-position: center calc(50% - 5%); }
+   100% { background-position: center center; }
 }
+
 ::placeholder {
-  color: var(--text-placeholder);
-  opacity: 1;
+   color: var(--text-placeholder);
+   opacity: 1;
 }
+
 html {
-  scroll-behavior: smooth;
+   scroll-behavior: smooth;
 }
 
-/* Taskbar */
-.f-nav {
-  display: flex;
-  align-items: center;
-  background: var(--background-nav);
-  height: 120px;
-  padding: 0 20px;
-}
-.f-nav img {
-  width: 120px;
-  height: 120px;
-  cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-.f-nav img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 12px var(--d0aaff));
-}
-.f-nav .other-nav-items {
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-}
-.f-nav .other-nav-items a {
-  color: var(--text-primary);
-  text-decoration: none;
-  padding: 0 15px;
-  transition: color 0.3s ease;
-}
-.f-nav .other-nav-items a:hover {
-  color: var(--save-button);
-}
-
-/* Main Content */
+/* Main Content Styling */
 .main {
-  position: absolute;
-  top: 30vh; /* fixed vertical offset prevents layout shift */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+   letter-spacing: 0px;
+   font-family: "Inter", sans-serif;
+   width: 99%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   top: 0%;
+   position: absolute;
+   z-index: 99;
 }
 
-/* Title */
+/* Title Styling */
 .title {
-  font-family: Poppins, sans-serif;
-  font-weight: 630;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--text-primary);
-  /* reserve glow space so hover never shifts layout */
-  text-shadow:
-    2px 2px 4px rgba(0,0,0,0.3),
-    0 0 50px rgba(208,170,255,0);
-  display: inline-block;
-  padding: 10px 0; /* prevents layout shift */
-  line-height: 1;
-  transition: text-shadow 0.3s ease, color 0.3s ease;
-}
-.title:hover {
-  color: var(--d0aaff);
-  text-shadow:
-    0 0 20px var(--d0aaff),
-    0 0 30px var(--d0aaff),
-    0 0 50px var(--d0aaff);
+   font-family: "Poppins", sans-serif;
+   font-weight: 630;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+   transition: text-shadow 0.3s ease;
+   position: relative;
+   z-index: 1; /* Added to ensure title stays on top */
 }
 
-/* Search Bar */
-.search-container {
-  margin-top: 20px; /* space below title */
+.title:hover {
+   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
+   color: #d0aaff;
 }
+
+/* Logo Styling */
+.logo {
+   width: 180px;
+   height: auto;
+   margin-bottom: 15px;
+   filter: drop-shadow(0 0 8px #00ffff);
+   border-radius: 12px;
+}
+
+/* Search Bar Styling */
 .search-home {
-  border: 2px solid transparent;
-  border-bottom: 2px solid var(--text-primary);
-  background: var(--background-input);
-  padding: 10px;
-  color: var(--text-primary);
-  font-size: 1.1rem;
-  transition: box-shadow 0.3s ease, border-bottom 0.3s ease;
+   border: 2px solid transparent;
+   border-bottom: 2px solid var(--text-primary);
+   background: var(--background-input);
+   padding: 10px;
+   color: var(--text-primary);
+   font-size: 1.1rem;
+   transition: all 0.3s ease;
+   z-index: 0; /* Prevent search bar from being affected by title hover */
 }
+
+.search-home:focus {
+   border-bottom: 2px solid #4caf50;
+   outline: none;
+}
+
 .search-home:hover,
 .search-home:focus {
-  border-bottom: 2px solid var(--save-button);
-  box-shadow: 0 0 8px rgba(208,170,255,0.6);
-  outline: none;
+   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
-/* Buttons & Links */
+/* Button Styling */
 button {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-button:hover {
-  transform: scale(1.1);
-}
-a {
-  color: var(--text-primary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: var(--save-button);
+   transition: transform 0.3s ease;
 }
 
-/* Footer */
+button:hover {
+   transform: scale(1.1);
+}
+
+/* Link Styling */
+a {
+   text-decoration: none;
+   color: var(--text-primary);
+   transition: color 0.3s ease;
+}
+
+a:hover {
+   color: var(--save-button);
+}
+
+/* Footer Styling */
 .custom-footer {
-  background: var(--background-nav);
-  padding: 20px;
-  text-align: center;
-  color: var(--text-primary);
+   background: var(--background-nav);
+   padding: 20px;
+   text-align: center;
+   color: var(--text-primary);
 }
+
 .custom-footer a {
-  color: var(--save-button);
-  text-decoration: none;
+   color: var(--save-button);
+   text-decoration: none;
 }
+
 .custom-footer a:hover {
-  text-decoration: underline;
+   text-decoration: underline;
+}
+
+/* Taskbar Styling */
+.f-nav {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   background-color: var(--background-nav);
+   height: 120px; /* Adjusted to fit the larger favicon */
+   padding: 10px 20px;
+   position: relative;
+}
+
+.f-nav img {
+   width: 120px; /* Ensuring favicon is large enough */
+   height: 120px;
+   margin-top: -20px; /* Increased to make the favicon higher */
+   transition: transform 0.3s ease, filter 0.3s ease; /* Added glow effect */
+}
+
+.f-nav img:hover {
+   transform: scale(1.1); /* Slight enlarge effect on hover */
+   filter: drop-shadow(0 0 10px #d0aaff); /* Glow effect on hover */
+}
+
+/* Navbar and Taskbar Additional Items */
+.f-nav .other-nav-items {
+   display: flex;
+   align-items: center;
+   margin-left: 20px;
+   color: var(--text-primary);
+}
+
+.f-nav .other-nav-items a {
+   color: var(--text-primary);
+   font-size: 1.1rem;
+   text-decoration: none;
+   padding: 0 15px;
+   transition: color 0.3s ease;
+}
+
+.f-nav .other-nav-items a:hover {
+   color: var(--save-button);
+}
+
+/* Header or Title Wave Animation */
+@keyframes moveBackground {
+   0% { background-position: center center; }
+   25% { background-position: center calc(50% + 5%); }
+   50% { background-position: center center; }
+   75% { background-position: center calc(50% - 5%); }
+   100% { background-position: center center; }
+}
+
+/* Title Hover Effects */
+.title:hover {
+   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
+   color: #d0aaff;
 }
