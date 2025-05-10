@@ -54,14 +54,14 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
-   animation: moveBackground 15s ease-in-out infinite; /* Faster animation */
+   animation: moveBackground 5s ease-in-out infinite; /* Faster animation */
 }
 
 @keyframes moveBackground {
    0% { background-position: center center; }
-   25% { background-position: center calc(50% + 5%); }
+   25% { background-position: center calc(50% + 10%); }
    50% { background-position: center center; }
-   75% { background-position: center calc(50% - 5%); }
+   75% { background-position: center calc(50% - 10%); }
    100% { background-position: center center; }
 }
 
@@ -91,20 +91,23 @@ html {
 /* Title Styling */
 .title {
    font-family: "Poppins", sans-serif;
-   font-weight: 630; /* Already bold to match hover */
+   font-weight: 630;
    text-transform: uppercase;
    letter-spacing: 1.5px;
    color: #fff;
-   text-shadow: 0 0 20px transparent, 0 0 30px transparent, 0 0 50px transparent;
+   text-shadow: 0 0 0 transparent; /* avoids layout shift */
    display: inline-block;
-   padding: 10px 0; /* Prevents layout shift */
+   padding: 10px 0;
    line-height: 1;
    transition: text-shadow 0.3s ease, color 0.3s ease;
    position: relative;
    z-index: 1;
+   will-change: text-shadow, color;
+   backface-visibility: hidden; /* helps prevent text anti-aliasing shift */
 }
 
 .title:hover {
+   font-weight: 630; /* force same weight on hover */
    color: #d0aaff;
    text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
 }
@@ -135,6 +138,7 @@ html {
    border-bottom: 2px solid #d0aaff;
    outline: none;
 }
+
 
 .search-home:focus {
    border-bottom: 2px solid #4caf50;
