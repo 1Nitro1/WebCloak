@@ -59,9 +59,9 @@ body {
 
 @keyframes moveBackground {
    0% { background-position: center center; }
-   25% { background-position: center calc(50% + 10%); }
+   25% { background-position: center calc(50% + 15%); }
    50% { background-position: center center; }
-   75% { background-position: center calc(50% - 10%); }
+   75% { background-position: center calc(50% - 15%); }
    100% { background-position: center center; }
 }
 
@@ -123,11 +123,6 @@ html {
 .search-home:focus {
    border-bottom: 2px solid #4caf50;
    outline: none;
-}
-
-.search-home:hover,
-.search-home:focus {
-   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 /* Button Styling */
