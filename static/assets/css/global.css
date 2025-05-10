@@ -119,13 +119,24 @@ body {
 }
 /* === Logo Styling === */
 .logo {
-    width: 360px; /* Doubled size */
+    width: 720px; /* Doubled size */
     height: auto;
     margin-bottom: 15px;
     filter: drop-shadow(0 0 8px #00ffff);
-    border-radius: 12px;
+    border-radius: 25px;
     transition: filter 0.3s ease;
 }
+
+#INImg {
+   width: 64px; /* Adjust the width */
+   height: auto; /* Keep the aspect ratio */
+   transition: transform 0.3s ease;
+}
+
+#INImg:hover {
+   transform: scale(1.5); /* Slight scale when hovered to make it more noticeable */
+}
+
 
 .logo:hover {
     filter: drop-shadow(0 0 15px #00ffff);
