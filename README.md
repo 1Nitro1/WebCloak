@@ -1,6 +1,5 @@
 <div align="center">
-    <img src="assets/media/favicon/main.png" height="120">
-    <p>A sleek and minimal web proxy UI designed for customization and speed.</p>
+    <p>WebCloak is a sleek and minimal web proxy UI designed for customization and speed.</p>
     <p>WebCloak is a frontend built to deliver privacy, aesthetics, and simplicity — perfect for lightweight deployments.</p>
 </div>
 
@@ -27,9 +26,11 @@
 > WebCloak is designed to be hosted with a compatible backend proxy such as Ultraviolet, Stomp, or Dynamic.  
 > This repo provides the frontend interface only.
 
-### Quick Start
+---
 
-```bash
-git clone https://github.com/your-username/WebCloak
-cd WebCloak
+Huge thanks to Interstellar — this project wouldn't exist without their original work. WebCloak is a fork built upon their foundation.
+
+## Questions? Ask me through the form and I will answer as soon as I can!
+https://forms.gle/QwVYgR8Au148gAoJ8 
+
 
