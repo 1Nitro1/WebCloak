@@ -187,7 +187,7 @@ a:hover {
 .f-nav img {
    width: 120px; /* Ensuring favicon is large enough */
    height: 120px;
-   margin-top: -10px; /* Adjusted to vertically center the favicon */
+   margin-top: -20px; /* Increased to make the favicon higher */
    transition: transform 0.3s ease, filter 0.3s ease; /* Added glow effect */
 }
 
