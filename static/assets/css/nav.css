@@ -1,119 +1,141 @@
-/* Navbar Styles */
-.f-nav-container {
-   min-height: 20vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 20px;
-   background-color: var(--background-nav);
+/* General Icon and Image Styling */
+.material-symbols-outlined {
+   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
-.f-nav {
+.f-nav #icon-container {
    display: flex;
-   justify-content: space-between;
    align-items: center;
+}
+
+img {
    width: 100%;
-   max-width: 1200px;
-   padding: 20px;
+   height: 100%;
+   padding-top: 5px;
 }
 
-/* Title Styling */
-.title {
-   font-family: "Poppins", sans-serif;
-   font-weight: 630;
+/* Navbar Container Styling */
+.f-nav-container {
+   min-width: 5vw;
+   min-height: 10vh;
+   display: inline;
+}
+
+/* Navbar Styling */
+.f-nav {
+   top: 0;
+   letter-spacing: 2px;
+   font-size: 22px;
+   left: 0;
+   right: 0;
+   min-height: 10vh;
+   padding: 0 25px;
+   box-sizing: border-box;
+   background-color: var(--background-nav);
+   box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
+   -webkit-backdrop-filter: var(--backdrop-filter);
+   backdrop-filter: var(--backdrop-filter);
+   transition: 0.35s ease;
+   border-radius: 15px;
+   width: fill;
+   margin: 15px;
+   z-index: 100;
+   position: fixed;
+}
+
+/* Hover Effects for Navbar Icons */
+.f-nav .icon:hover {
+   transform: translateY(-15%) scale(1.03);
+   font-weight: 800;
+}
+
+.f-nav .icon {
+   position: absolute;
+   float: left;
    text-transform: uppercase;
-   letter-spacing: 1.5px;
-   color: #fff;
-   text-shadow: 0 0 5px #d0aaff44;
-   transition: text-shadow 0.3s ease, color 0.3s ease;
-   display: inline-block;
-   padding: 10px 0;
-   line-height: 1;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-}
-
-.title:hover {
-   color: #d0aaff;
-   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
-}
-
-/* Search Bar Styling */
-.search-home {
-   border: 2px solid transparent;
-   border-bottom: 2px solid var(--text-primary);
-   background: var(--background-input);
-   padding: 10px;
+   font-size: 30px;
+   font-family: "Inter", sans-serif;
+   cursor: pointer;
    color: var(--text-primary);
-   font-size: 1.1rem;
-   transition: all 0.3s ease;
-}
-
-.search-home:hover {
-   color: #d0aaff;
-   text-shadow: 0 0 5px #d0aaff, 0 0 15px #d0aaff, 0 0 35px #d0aaff;
-}
-
-.search-home:focus {
-   border-bottom: 2px solid #4caf50;
-   outline: none;
-   box-shadow: 0 0 10px rgba(208, 170, 255, 0.6);
-}
-
-/* Navbar Search Button Styling */
-button {
-   transition: transform 0.3s ease;
-}
-
-button:hover {
-   transform: scale(1.1);
-}
-
-a {
+   font-weight: 600;
+   margin-left: 5px;
+   font-style: normal;
    text-decoration: none;
+   transition: all 0.2s ease;
+   height: 5vh;
+   top: 18%;
+}
+
+/* Right Side Navbar Styling */
+.f-nav-right {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   text-transform: uppercase;
+   font-size: 18px;
    color: var(--text-primary);
-   transition: color 0.3s ease;
+   font-weight: 600;
+   right: 2%;
 }
 
-a:hover {
-   color: var(--save-button);
-}
-
-/* Navbar Scrollbar */
-::-webkit-scrollbar {
-   width: 6px;
-   background-color: var(--background-color);
-}
-
-::-webkit-scrollbar-track {
-   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-   border-radius: 10px;
-   background-color: var(--background-color);
-}
-
-::-webkit-scrollbar-thumb {
-   border-radius: 10px;
-   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-   background-color: var(--text-primary);
-}
-
-::-webkit-scrollbar-thumb:hover {
-   background-color: var(--text-dark);
-}
-
-/* Footer Styles */
-.custom-footer {
-   background: var(--background-nav);
-   padding: 20px;
-   text-align: center;
+.f-nav-right .navbar-link {
+   margin-left: 10px;
+   text-transform: uppercase;
+   cursor: pointer;
    color: var(--text-primary);
-}
-
-.custom-footer a {
-   color: var(--save-button);
+   font-weight: 800;
+   right: 2%;
+   font-family: "Inter", sans-serif;
+   font-style: normal;
    text-decoration: none;
+   transition: all 0.2s ease;
+   transform: translateX(0%);
 }
 
-.custom-footer a:hover {
-   text-decoration: underline;
+/* Media Queries for Navbar Link Styles */
+@media (orientation: portrait) {
+   .f-nav-right .navbar-link {
+      margin-left: 10px;
+      text-transform: uppercase;
+      font-size: 2.5vw;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-weight: 800;
+      right: 2%;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      transform: translateX(0%);
+   }
+
+   .f-nav-right .navbar-link:hover {
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 800;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-size: 3vw;
+      transform: translateX(-20%);
+   }
+}
+
+.f-nav-right .navbar-link:hover {
+   text-transform: uppercase;
+   cursor: pointer;
+   font-weight: 800;
+   font-family: "Inter", sans-serif;
+   font-style: normal;
+   font-size: 3vh;
+   transform: translateX(-20%);
+}
+
+/* Navbar Icon Styling */
+.navbar-icon {
+   margin-right: 5px;
+   transition: all 0.2s ease;
+}
+
+.navbar-link {
+   margin-right: 5px;
 }
