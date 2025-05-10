@@ -92,18 +92,14 @@ img {
    transform: translateX(0%);
 }
 
-   #INImg {
+#INImg {
     width: 100px;   /* Size the image */
     height: 100px;  /* Keep height same for square aspect ratio */
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: -15px; /* Adjust this value to move it up or down */
+    left: 20px;  /* Keep the image aligned to the left */
     z-index: 999;
     position: relative; /* Allows positioning relative to its normal position */
-    top: -15px /* Adjust this value to move it up or down */
-    right: 0;
-}
-
 }
 
 /* Media Queries for Navbar Link Styles */
