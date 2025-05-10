@@ -1,14 +1,15 @@
-/* Navbar Styles */
+/* Navbar Container */
 .f-nav-container {
-   min-height: 20vh;  /* Adjusted to match new favicon size */
+   min-height: 20vh;
    display: flex;
-   justify-content: center;
+   justify-content: flex-start; /* Align to the left */
    align-items: center;
    padding: 20px;
    background-color: var(--background-nav);
    position: relative;
 }
 
+/* Navbar */
 .f-nav {
    display: flex;
    justify-content: space-between;
@@ -16,58 +17,42 @@
    width: 100%;
    max-width: 1200px;
    padding: 20px;
+   position: relative;
 }
 
-.f-nav .icon {
-   height: 10vh;  /* Adjusted height */
-   top: 25%;      /* Vertically aligned */
-}
-
-/* Make the Favicon Clickable and go to Homepage */
-a#favicon-link {
-   display: inline-block;
-   cursor: pointer;
-}
-
-a#favicon-link img {
-   width: 36px;  /* Double the original size */
-   height: 36px;
-   transition: filter 0.3s ease;
+/* Favicon Styling */
+#INImg {
+   width: 32px;  /* Correct size of the favicon */
+   height: 32px;
+   position: absolute;
+   top: 10px;  /* Position it near the top */
+   right: 20px;  /* Position it near the right */
+   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* Hover Effect for Favicon */
-a#favicon-link img:hover {
-   filter: drop-shadow(0 0 10px #d0aaff);  /* Glowing effect on hover */
+#INImg:hover {
+   transform: scale(1.2);  /* Slightly enlarge on hover */
+   filter: drop-shadow(0 0 10px #d0aaff);  /* Glowing effect */
 }
 
-/* Title Styling */
+/* Navbar Title */
 .title {
    font-family: "Poppins", sans-serif;
-   font-weight: 630; /* Adjusted to make it bolder */
+   font-weight: 630;
    text-transform: uppercase;
    letter-spacing: 1.5px;
    color: #fff;
-   text-shadow: 0 0 5px #d0aaff44; /* Subtle default glow */
+   text-shadow: 0 0 5px #d0aaff44;
    transition: text-shadow 0.3s ease, color 0.3s ease;
    display: inline-block;
    padding: 10px 0;
-   line-height: 1;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hover Effect for Title */
 .title:hover {
    color: #d0aaff;
-   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff; /* Intense glow */
-}
-
-/* Logo Styling */
-.logo {
-   width: 180px;
-   height: auto;
-   margin-bottom: 15px;
-   filter: drop-shadow(0 0 8px #00ffff);
-   border-radius: 12px;
+   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
 }
 
 /* Search Bar Styling */
@@ -83,32 +68,38 @@ a#favicon-link img:hover {
 
 .search-home:hover {
    color: #d0aaff;
-   text-shadow: 0 0 5px #d0aaff, 0 0 15px #d0aaff, 0 0 35px #d0aaff; /* Intense glow */
+   text-shadow: 0 0 5px #d0aaff, 0 0 15px #d0aaff, 0 0 35px #d0aaff;
 }
 
 .search-home:focus {
    border-bottom: 2px solid #4caf50;
    outline: none;
-   box-shadow: 0 0 10px rgba(208, 170, 255, 0.6); /* Subtle glow */
+   box-shadow: 0 0 10px rgba(208, 170, 255, 0.6);
 }
 
-/* Navbar Search Button Styling */
-button {
-   transition: transform 0.3s ease;
+/* Taskbar Container */
+.taskbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   z-index: 10;  /* Make sure it stays on top */
+   background: var(--background-nav);
+   padding: 10px;
 }
 
-button:hover {
-   transform: scale(1.1);
-}
-
-a {
-   text-decoration: none;
+/* Taskbar Items */
+.taskbar-item {
+   margin: 0 15px;
    color: var(--text-primary);
-   transition: color 0.3s ease;
+   font-size: 1rem;
+   text-decoration: none;
 }
 
-a:hover {
-   color: var(--save-button);
+.taskbar-item:hover {
+   color: #d0aaff;
 }
 
 /* Navbar Scrollbar */
@@ -118,34 +109,13 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-   border-radius: 10px;
    background-color: var(--background-color);
 }
 
 ::-webkit-scrollbar-thumb {
-   border-radius: 10px;
-   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
    background-color: var(--text-primary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
    background-color: var(--text-dark);
-}
-
-/* Footer Styles */
-.custom-footer {
-   background: var(--background-nav);
-   padding: 20px;
-   text-align: center;
-   color: var(--text-primary);
-}
-
-.custom-footer a {
-   color: var(--save-button);
-   text-decoration: none;
-}
-
-.custom-footer a:hover {
-   text-decoration: underline;
 }
