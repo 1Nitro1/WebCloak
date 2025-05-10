@@ -62,6 +62,7 @@ body {
 
 @keyframes moveBackground {
    0% {
+      background-position: center calc(50% - 20%); /* Slight move up */
    }
    25% {
       background-position: center calc(50% + 20%); /* Slight move down */
