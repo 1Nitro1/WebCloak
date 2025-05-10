@@ -57,7 +57,7 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
-   animation: moveBackground 4s ease-in-out infinite; /* Faster animation */
+   animation: moveBackground 5s ease-in-out infinite; /* Faster animation */
 }
 
 @keyframes moveBackground {
@@ -68,13 +68,11 @@ body {
       background-position: center calc(50% + 10%); /* Slight move down */
    }
    50% {
-      background-position: center center; /* Back to the center */
    }
    75% {
       background-position: center calc(50% - 10%); /* Slight move up */
    }
    100% {
-      background-position: center center; /* Back to the center */
    }
 }
 
@@ -98,7 +96,7 @@ body {
 
 .title {
    font-family: "Poppins", sans-serif;
-   font-weight: 600; /* Adjusted to make it bolder */
+   font-weight: 650; /* Adjusted to make it bolder */
    text-transform: uppercase;
    letter-spacing: 1.5px;
    color: #fff;
