@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 
 :root {
+   /* Background Variables */
    --background-image: url("/./assets/media/background/full-main.png");
    --backdrop-filter: blur(10px) brightness(80%);
    --background-nav: rgba(255, 255, 255, 0.02);
@@ -10,15 +12,17 @@
    --background-settings: #2a2a2a;
    --background-buttons: #333;
    --tab-active-background: #444;
-   --tab-inactive-background: ;
+   --tab-inactive-background: transparent;
    --slider-active-background: #4caf50;
    --slider-inactive-background: #ccc;
    --nav-image: url("/./assets/media/favicon/main.png");
 
+   /* Text Variables */
    --text-primary: #fff;
    --text-dark: #555;
    --text-placeholder: #aaa;
 
+   /* Button Colors */
    --save-button: #4caf50;
    --reset-button: #f44336;
    --import-button: #009688;
@@ -48,6 +52,7 @@
 
 body {
    font-family: "Share Tech Mono", monospace;
+   text-decoration: none;
    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--background-image);
    height: 100%;
    background-position: center center;
@@ -62,10 +67,13 @@ body {
       background-position: center center;
    }
    25% {
-      background-position: center calc(50% + 5%);
+      background-position: center calc(50% + 3%);
+   }
+   50% {
+      background-position: center center;
    }
    75% {
-      background-position: center calc(50% - 5%);
+      background-position: center calc(50% - 3%);
    }
    100% {
       background-position: center center;
@@ -78,6 +86,7 @@ body {
 }
 
 .main {
+   letter-spacing: 0px;
    font-family: "Share Tech Mono", monospace;
    width: 99%;
    display: flex;
@@ -96,6 +105,9 @@ body {
    letter-spacing: 1.5px;
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
    transition: text-shadow 0.3s ease, color 0.3s ease;
+   display: inline-block;
+   padding: 10px 0;
+   line-height: 1;
 }
 
 .title:hover {
@@ -128,31 +140,23 @@ body {
 }
 
 button {
+   transition: transform 0.3s ease;
    font-family: "Share Tech Mono", monospace;
-   background: var(--background-buttons);
-   color: var(--text-primary);
-   border: none;
-   padding: 10px 20px;
-   border-radius: 6px;
-   cursor: pointer;
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
    transform: scale(1.1);
-   box-shadow: 0 0 15px #d0aaff;
 }
 
 a {
    text-decoration: none;
    color: var(--text-primary);
+   transition: color 0.3s ease;
    font-family: "Share Tech Mono", monospace;
-   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
-   color: #d0aaff;
-   text-shadow: 0 0 10px #d0aaff;
+   color: var(--save-button);
 }
 
 html {
@@ -164,7 +168,6 @@ html {
    padding: 20px;
    text-align: center;
    color: var(--text-primary);
-   font-family: "Share Tech Mono", monospace;
 }
 
 .custom-footer a {
@@ -174,5 +177,4 @@ html {
 
 .custom-footer a:hover {
    text-decoration: underline;
-   color: #d0aaff;
 }
