@@ -30,8 +30,8 @@ a#favicon-link {
 }
 
 a#favicon-link img {
-   width: 64px;  /* Double the original size */
-   height: 64px;
+   width: 36px;  /* Double the original size */
+   height: 36px;
    transition: filter 0.3s ease;
 }
 
