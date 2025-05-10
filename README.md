@@ -28,9 +28,17 @@
 
 ---
 
+### License
+This project is licensed under the GNU Affero General Public License (AGPL) v3.0.
+
+This means you are free to use, modify, and distribute the code, as long as you follow the terms of the AGPL. If you make modifications and use it on a server, you must make the source code available to users interacting with it.
+
+---
+
 Huge thanks to Interstellar — this project wouldn't exist without their original work. WebCloak is a fork built upon their foundation.
 
 ## Questions? Ask me through the form and I will answer as soon as I can!
-https://forms.gle/QwVYgR8Au148gAoJ8 
+[Contact Form](https://forms.gle/QwVYgR8Au148gAoJ8) 
 
+---
 
