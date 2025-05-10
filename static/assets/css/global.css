@@ -91,18 +91,22 @@ html {
 /* Title Styling */
 .title {
    font-family: "Poppins", sans-serif;
-   font-weight: 630;
+   font-weight: 630; /* Already bold to match hover */
    text-transform: uppercase;
    letter-spacing: 1.5px;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-   transition: text-shadow 0.3s ease;
+   color: #fff;
+   text-shadow: 0 0 20px transparent, 0 0 30px transparent, 0 0 50px transparent;
+   display: inline-block;
+   padding: 10px 0; /* Prevents layout shift */
+   line-height: 1;
+   transition: text-shadow 0.3s ease, color 0.3s ease;
    position: relative;
-   z-index: 1; /* Added to ensure title stays on top */
+   z-index: 1;
 }
 
 .title:hover {
-   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
    color: #d0aaff;
+   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
 }
 
 /* Logo Styling */
@@ -122,8 +126,14 @@ html {
    padding: 10px;
    color: var(--text-primary);
    font-size: 1.1rem;
-   transition: all 0.3s ease;
-   z-index: 0; /* Prevent search bar from being affected by title hover */
+   transition: box-shadow 0.3s ease, border-bottom 0.3s ease;
+   z-index: 0;
+}
+.search-home:hover,
+.search-home:focus {
+   box-shadow: 0 0 8px rgba(208, 170, 255, 0.5);
+   border-bottom: 2px solid #d0aaff;
+   outline: none;
 }
 
 .search-home:focus {
