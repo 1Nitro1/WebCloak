@@ -1,64 +1,28 @@
-/* Global Styles - global.css */
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+/* Global Variables */
 :root {
-   /* Background Variables */
-   --background-image: url("/./assets/media/background/full-main.png"); /* Background Image */
-   --backdrop-filter: blur(10px) brightness(80%); /* Nav Backdrop filter */
-   --background-nav: rgba(255, 255, 255, 0.02); /* Nav Background */
-   --background-color: #222; /* Main Background Color */
-   --background-input: #4545459e; /* Input Field Background Color */
-   --background-column: #353535; /* Background for Apps Container */
-   --background-settings: #2a2a2a; /* Settings Card Background */
-   --background-buttons: #333; /* Button Background Color */
-   --tab-active-background: #444; /* Accent Color for Tabs */
-   --tab-inactive-background: ; /* Background Color for Tabs Not In Use */
-   --slider-active-background: #4caf50; /* Active Slider Background Color */
-   --slider-inactive-background: #ccc; /* Slider Background Color */
-   --nav-image: url("/./assets/media/favicon/main.png"); /* Nav Logo */
-   /* Text Variables */
-   --text-primary: #fff; /* Primary Text Color */
-   --text-dark: #555; /* Dark Text Color for Error Page, Scrollbar, and Particles */
-   --text-placeholder: #aaa; /* Placeholder Text Color */
-   /* Other Variables */
-   --save-button: #4caf50; /* Save Button, Typically Green */
-   --reset-button: #f44336; /* Reset Button, Typically Red */
-   --import-button: #009688; /* Import Button, Typically Teal */
-   --export-button: #ea76cb; /* Export Button, Typically Pink */
+   --background-image: url("/./assets/media/background/full-main.png");
+   --backdrop-filter: blur(10px) brightness(80%);
+   --background-nav: rgba(255, 255, 255, 0.02);
+   --background-color: #222;
+   --background-input: #4545459e;
+   --background-column: #353535;
+   --background-settings: #2a2a2a;
+   --background-buttons: #333;
+   --tab-active-background: #444;
+   --tab-inactive-background: ;
+   --slider-active-background: #4caf50;
+   --slider-inactive-background: #ccc;
+   --nav-image: url("/./assets/media/favicon/main.png");
+   --text-primary: #fff;
+   --text-dark: #555;
+   --text-placeholder: #aaa;
+   --save-button: #4caf50;
+   --reset-button: #f44336;
+   --import-button: #009688;
+   --export-button: #ea76cb;
 }
 
-body {
-   font-family: "Inter", sans-serif;
-   text-decoration: none;
-   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--background-image);
-   height: 100%;
-   background-position: center center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-attachment: fixed;
-   animation: moveBackground 15s ease-in-out infinite; /* Faster animation */
-}
-
-@keyframes moveBackground {
-   0% {
-      background-position: center center;
-   }
-   25% {
-      background-position: center calc(50% + 5%);
-   }
-   50% {
-      background-position: center center;
-   }
-   75% {
-      background-position: center calc(50% - 5%);
-   }
-   100% {
-      background-position: center center;
-   }
-}
-
+/* Scrollbar Customization */
 ::-webkit-scrollbar {
    width: 6px;
    background-color: var(--background-color);
@@ -80,6 +44,37 @@ body {
    background-color: var(--text-dark);
 }
 
+/* General Styles */
+body {
+   font-family: "Inter", sans-serif;
+   text-decoration: none;
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--background-image);
+   height: 100%;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   animation: moveBackground 15s ease-in-out infinite; /* Faster animation */
+}
+
+@keyframes moveBackground {
+   0% { background-position: center center; }
+   25% { background-position: center calc(50% + 5%); }
+   50% { background-position: center center; }
+   75% { background-position: center calc(50% - 5%); }
+   100% { background-position: center center; }
+}
+
+::placeholder {
+   color: var(--text-placeholder);
+   opacity: 1;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+/* Main Content Styling */
 .main {
    letter-spacing: 0px;
    font-family: "Inter", sans-serif;
@@ -93,14 +88,14 @@ body {
    z-index: 99;
 }
 
+/* Title Styling */
 .title {
    font-family: "Poppins", sans-serif;
-   font-weight: 630; /* Increased boldness */
+   font-weight: 630;
    text-transform: uppercase;
    letter-spacing: 1.5px;
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-   transition: text-shadow 0.3s ease, color 0.3s ease;
-   color: #fff; /* Static color */
+   transition: text-shadow 0.3s ease;
 }
 
 .title:hover {
@@ -108,36 +103,16 @@ body {
    color: #d0aaff;
 }
 
+/* Logo Styling */
 .logo {
-   width: 60px; /* Adjust this size */
-   height: 60px;
+   width: 180px;
+   height: auto;
    margin-bottom: 15px;
-   filter: drop-shadow(0 0 8px #00ffff); /* Glow effect */
+   filter: drop-shadow(0 0 8px #00ffff);
    border-radius: 12px;
-   position: absolute;
-   top: 20px;
-   left: 20px;
-   cursor: pointer;
-   transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
 }
 
-.logo:hover {
-   transform: scale(1.1); /* Slight enlarge effect on hover */
-   filter: drop-shadow(0 0 12px #00ffff); /* Stronger glow on hover */
-}
-
-/* Targeting the logo button specifically */
-#INImg {
-   width: 120px; /* 2x bigger */
-   height: 120px; /* 2x bigger */
-   transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
-}
-
-#INImg:hover {
-   transform: scale(1.1); /* Slight enlarge effect on hover */
-   filter: drop-shadow(0 0 12px #00ffff); /* Glow effect */
-}
-
+/* Search Bar Styling */
 .search-home {
    border: 2px solid transparent;
    border-bottom: 2px solid var(--text-primary);
@@ -145,19 +120,20 @@ body {
    padding: 10px;
    color: var(--text-primary);
    font-size: 1.1rem;
-   transition: all 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+   transition: all 0.3s ease;
 }
 
 .search-home:focus {
    border-bottom: 2px solid #4caf50;
    outline: none;
-   box-shadow: 0 0 8px rgba(72, 255, 72, 0.8); /* Subtle glow on focus */
 }
 
-.search-home:hover {
-   box-shadow: 0 0 5px rgba(150, 0, 255, 0.4); /* Subtle glow on hover */
+.search-home:hover,
+.search-home:focus {
+   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
+/* Button Styling */
 button {
    transition: transform 0.3s ease;
 }
@@ -166,6 +142,7 @@ button:hover {
    transform: scale(1.1);
 }
 
+/* Link Styling */
 a {
    text-decoration: none;
    color: var(--text-primary);
@@ -176,10 +153,7 @@ a:hover {
    color: var(--save-button);
 }
 
-html {
-   scroll-behavior: smooth;
-}
-
+/* Footer Styling */
 .custom-footer {
    background: var(--background-nav);
    padding: 20px;
@@ -195,3 +169,60 @@ html {
 .custom-footer a:hover {
    text-decoration: underline;
 }
+
+/* Taskbar Styling */
+.f-nav {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   background-color: var(--background-nav);
+   height: 120px; /* Adjusted to fit the larger favicon */
+   padding: 10px 20px;
+   position: relative;
+}
+
+.f-nav img {
+   width: 120px; /* Ensure the favicon fits the taskbar */
+   height: 120px;
+   transition: transform 0.3s ease;
+}
+
+.f-nav img:hover {
+   transform: scale(1.1); /* Slight enlarge effect on hover */
+}
+
+/* Navbar and Taskbar Additional Items */
+.f-nav .other-nav-items {
+   display: flex;
+   align-items: center;
+   margin-left: 20px;
+   color: var(--text-primary);
+}
+
+.f-nav .other-nav-items a {
+   color: var(--text-primary);
+   font-size: 1.1rem;
+   text-decoration: none;
+   padding: 0 15px;
+   transition: color 0.3s ease;
+}
+
+.f-nav .other-nav-items a:hover {
+   color: var(--save-button);
+}
+
+/* Animation - Header or Title */
+@keyframes moveBackground {
+   0% { background-position: center center; }
+   25% { background-position: center calc(50% + 5%); }
+   50% { background-position: center center; }
+   75% { background-position: center calc(50% - 5%); }
+   100% { background-position: center center; }
+}
+
+/* Title Hover Effects */
+.title:hover {
+   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
+   color: #d0aaff;
+}
+
