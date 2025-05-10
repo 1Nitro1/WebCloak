@@ -97,7 +97,7 @@ img {
     height: 100px;  /* Keep height same for square aspect ratio */
     position: fixed;
     top: -25px; /* Adjust this value to move it up or down */
-    left: -10px;  /* Keep the image aligned to the left */
+    left: -15px;  /* Keep the image aligned to the left */
     z-index: 999;
     position: relative; /* Allows positioning relative to its normal position */
 }
