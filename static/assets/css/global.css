@@ -97,6 +97,7 @@ html {
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
    transition: text-shadow 0.3s ease;
    position: relative;
+   z-index: 1; /* Added to ensure title stays on top */
 }
 
 .title:hover {
@@ -122,6 +123,7 @@ html {
    color: var(--text-primary);
    font-size: 1.1rem;
    transition: all 0.3s ease;
+   z-index: 0; /* Prevent search bar from being affected by title hover */
 }
 
 .search-home:focus {
@@ -185,7 +187,7 @@ a:hover {
 .f-nav img {
    width: 120px; /* Ensuring favicon is large enough */
    height: 120px;
-   margin-top: 15px; /* Center the favicon vertically */
+   margin-top: -10px; /* Adjusted to vertically center the favicon */
    transition: transform 0.3s ease, filter 0.3s ease; /* Added glow effect */
 }
 
@@ -217,9 +219,9 @@ a:hover {
 /* Header or Title Wave Animation */
 @keyframes moveBackground {
    0% { background-position: center center; }
-   25% { background-position: center calc(50% + 10%); }
+   25% { background-position: center calc(50% + 5%); }
    50% { background-position: center center; }
-   75% { background-position: center calc(50% - 10%); }
+   75% { background-position: center calc(50% - 5%); }
    100% { background-position: center center; }
 }
 
