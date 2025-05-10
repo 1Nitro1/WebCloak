@@ -95,7 +95,7 @@ body {
 
 .title {
    font-family: "Poppins", sans-serif;
-   font-weight: 630;
+   font-weight: 630; /* Increased boldness */
    text-transform: uppercase;
    letter-spacing: 1.5px;
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -109,8 +109,8 @@ body {
 }
 
 .logo {
-   width: 60px; /* Larger size */
-   height: 60px; /* Maintain aspect ratio */
+   width: 60px; /* Adjust this size */
+   height: 60px;
    margin-bottom: 15px;
    filter: drop-shadow(0 0 8px #00ffff); /* Glow effect */
    border-radius: 12px;
@@ -128,8 +128,8 @@ body {
 
 /* Targeting the logo button specifically */
 #INImg {
-   width: 60px; /* Set to the desired size */
-   height: 60px; /* Set to the desired size */
+   width: 120px; /* 2x bigger */
+   height: 120px; /* 2x bigger */
    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
 }
 
@@ -195,5 +195,3 @@ html {
 .custom-footer a:hover {
    text-decoration: underline;
 }
-
-
