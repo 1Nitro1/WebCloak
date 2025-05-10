@@ -95,50 +95,30 @@ html {
    text-transform: uppercase;
    letter-spacing: 1.5px;
    color: #fff;
-   text-shadow: 0 0 0 transparent; /* avoids layout shift */
    display: inline-block;
    padding: 10px 0;
    line-height: 1;
-   transition: text-shadow 0.3s ease, color 0.3s ease;
    position: relative;
    z-index: 1;
+   transition: text-shadow 0.3s ease, color 0.3s ease;
    will-change: text-shadow, color;
-   backface-visibility: hidden; /* helps prevent text anti-aliasing shift */
+
+   /* Prevent font rendering shifts */
+   backface-visibility: hidden;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-shadow: 0 0 0 transparent;
 }
 
 .title:hover {
-   font-weight: 630; /* force same weight on hover */
+   /* Keep font-weight and font-smoothing exactly the same */
+   font-weight: 630;
    color: #d0aaff;
    text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
-}
 
-/* Logo Styling */
-.logo {
-   width: 180px;
-   height: auto;
-   margin-bottom: 15px;
-   filter: drop-shadow(0 0 8px #00ffff);
-   border-radius: 12px;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
-
-/* Search Bar Styling */
-.search-home {
-   border: 2px solid transparent;
-   border-bottom: 2px solid var(--text-primary);
-   background: var(--background-input);
-   padding: 10px;
-   color: var(--text-primary);
-   font-size: 1.1rem;
-   transition: box-shadow 0.3s ease, border-bottom 0.3s ease;
-   z-index: 0;
-}
-.search-home:hover,
-.search-home:focus {
-   box-shadow: 0 0 8px rgba(208, 170, 255, 0.5);
-   border-bottom: 2px solid #d0aaff;
-   outline: none;
-}
-
 
 .search-home:focus {
    border-bottom: 2px solid #4caf50;
