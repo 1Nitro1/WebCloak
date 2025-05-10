@@ -4,7 +4,8 @@
     <p>WebCloak is a frontend built to deliver privacy, aesthetics, and simplicity — perfect for lightweight deployments.</p>
 </div>
 
-![screenshot](assets/media/screenshots/preview.png)
+<!-- If you add a screenshot later, you can place it here -->
+<!-- ![screenshot](assets/media/screenshots/preview.png) -->
 
 ---
 
@@ -31,3 +32,4 @@
 ```bash
 git clone https://github.com/your-username/WebCloak
 cd WebCloak
+
