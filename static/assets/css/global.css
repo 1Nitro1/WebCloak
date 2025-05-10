@@ -96,6 +96,7 @@ html {
    letter-spacing: 1.5px;
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
    transition: text-shadow 0.3s ease;
+   position: relative;
 }
 
 .title:hover {
@@ -182,13 +183,15 @@ a:hover {
 }
 
 .f-nav img {
-   width: 120px; /* Ensure the favicon fits the taskbar */
+   width: 120px; /* Ensuring favicon is large enough */
    height: 120px;
-   transition: transform 0.3s ease;
+   margin-top: 15px; /* Center the favicon vertically */
+   transition: transform 0.3s ease, filter 0.3s ease; /* Added glow effect */
 }
 
 .f-nav img:hover {
    transform: scale(1.1); /* Slight enlarge effect on hover */
+   filter: drop-shadow(0 0 10px #d0aaff); /* Glow effect on hover */
 }
 
 /* Navbar and Taskbar Additional Items */
@@ -211,12 +214,12 @@ a:hover {
    color: var(--save-button);
 }
 
-/* Animation - Header or Title */
+/* Header or Title Wave Animation */
 @keyframes moveBackground {
    0% { background-position: center center; }
-   25% { background-position: center calc(50% + 5%); }
+   25% { background-position: center calc(50% + 10%); }
    50% { background-position: center center; }
-   75% { background-position: center calc(50% - 5%); }
+   75% { background-position: center calc(50% - 10%); }
    100% { background-position: center center; }
 }
 
@@ -225,4 +228,3 @@ a:hover {
    text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
    color: #d0aaff;
 }
-
