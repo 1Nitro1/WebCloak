@@ -1,3 +1,5 @@
+/* Global Styles - global.css */
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
@@ -27,6 +29,36 @@
    --export-button: #ea76cb; /* Export Button, Typically Pink */
 }
 
+body {
+   font-family: "Inter", sans-serif;
+   text-decoration: none;
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--background-image);
+   height: 100%;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   animation: moveBackground 15s ease-in-out infinite; /* Faster animation */
+}
+
+@keyframes moveBackground {
+   0% {
+      background-position: center center;
+   }
+   25% {
+      background-position: center calc(50% + 5%);
+   }
+   50% {
+      background-position: center center;
+   }
+   75% {
+      background-position: center calc(50% - 5%);
+   }
+   100% {
+      background-position: center center;
+   }
+}
+
 ::-webkit-scrollbar {
    width: 6px;
    background-color: var(--background-color);
@@ -48,41 +80,6 @@
    background-color: var(--text-dark);
 }
 
-body {
-   font-family: "Inter", sans-serif;
-   text-decoration: none;
-   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--background-image);
-   height: 100%;
-   background-position: center center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-attachment: fixed;
-   animation: moveBackground 8s ease-in-out infinite; /* Faster and smoother animation */
-}
-
-@keyframes moveBackground {
-   0% {
-      background-position: center center; /* Start at the center */
-   }
-   25% {
-      background-position: center calc(50% + 10%); /* Move down */
-   }
-   50% {
-      background-position: center calc(50% - 10%); /* Move up */
-   }
-   75% {
-      background-position: center calc(50% + 10%); /* Move down again */
-   }
-   100% {
-      background-position: center center; /* Back to the center */
-   }
-}
-
-::placeholder {
-   color: var(--text-placeholder);
-   opacity: 1;
-}
-
 .main {
    letter-spacing: 0px;
    font-family: "Inter", sans-serif;
@@ -98,35 +95,30 @@ body {
 
 .title {
    font-family: "Poppins", sans-serif;
-   font-weight: 630; /* Adjusted to make it bolder */
+   font-weight: 630;
    text-transform: uppercase;
    letter-spacing: 1.5px;
-   color: #fff;
-   text-shadow: 0 0 5px #d0aaff44; /* Subtle default glow */
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
    transition: text-shadow 0.3s ease, color 0.3s ease;
-   display: inline-block;
-   padding: 10px 0;
-   line-height: 1;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
+   color: #fff; /* Static color */
 }
 
 .title:hover {
+   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
    color: #d0aaff;
-   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff; /* Intense glow */
 }
-/* Logo/ Favicon Button Styles */
+
 .logo {
-   width: 60px; /* Set to a noticeable size */
+   width: 60px; /* Larger size */
    height: 60px; /* Maintain aspect ratio */
    margin-bottom: 15px;
    filter: drop-shadow(0 0 8px #00ffff); /* Glow effect */
-   border-radius: 12px; /* Rounded corners */
+   border-radius: 12px;
    position: absolute;
-   top: 20px; /* Distance from the top */
-   left: 20px; /* Distance from the left */
-   cursor: pointer; /* Makes it clickable */
-   transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
+   top: 20px;
+   left: 20px;
+   cursor: pointer;
+   transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
 }
 
 .logo:hover {
@@ -141,13 +133,17 @@ body {
    padding: 10px;
    color: var(--text-primary);
    font-size: 1.1rem;
-   transition: all 0.3s ease;
+   transition: all 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
 }
 
 .search-home:focus {
    border-bottom: 2px solid #4caf50;
    outline: none;
-   box-shadow: 0 0 10px rgba(208, 170, 255, 0.6); /* Subtle glow */
+   box-shadow: 0 0 8px rgba(72, 255, 72, 0.8); /* Subtle glow on focus */
+}
+
+.search-home:hover {
+   box-shadow: 0 0 5px rgba(150, 0, 255, 0.4); /* Subtle glow on hover */
 }
 
 button {
