@@ -1,86 +1,94 @@
+/* === Global Variables === */
+:root {
+    --background-main: #121212;
+    --background-secondary: #1e1e1e;
+    --background-input: #2a2a2a;
+    --text-primary: #ffffff;
+}
+
 /* === Global Styles === */
 body {
-   margin: 0;
-   font-family: "Poppins", sans-serif;
-   background-color: var(--background-main); /* Normal background restored */
-   color: var(--text-primary);
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-main);
+    color: var(--text-primary);
 }
 
 /* === Fixed Navigation Bar === */
 .f-nav {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   height: 70px;
-   padding: 0 20px;
-   background-color: var(--background-secondary);
-   position: sticky;
-   top: 0;
-   z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 20px;
+    background-color: var(--background-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 /* === Favicon Button === */
 #INImg {
-   width: 48px;
-   height: auto;
-   filter: drop-shadow(0 0 8px #00ffff);
-   border-radius: 12px;
-   transition: filter 0.3s ease;
-   cursor: pointer;
-   display: block;
-   margin-top: 6px; /* Adjust to center it in taskbar */
+    width: 48px;
+    height: auto;
+    filter: drop-shadow(0 0 8px #00ffff);
+    border-radius: 12px;
+    transition: filter 0.3s ease;
+    cursor: pointer;
+    margin-top: 0px; /* Adjust to center */
 }
 
 #INImg:hover {
-   filter: drop-shadow(0 0 12px #00ffff);
+    filter: drop-shadow(0 0 12px #00ffff);
 }
 
 /* === Title Styling === */
 .title {
-   font-family: "Poppins", sans-serif;
-   font-weight: 700;
-   text-transform: uppercase;
-   letter-spacing: 1.5px;
-   color: #ffffff;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-   transition: text-shadow 0.3s ease, color 0.3s ease;
-   display: inline-block;
-   padding: 10px 0;
-   line-height: 1;
-   position: relative;
-   z-index: 1;
-   animation: waveFloat 2s ease-in-out infinite;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    padding: 10px 0;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    animation: waveFloat 2s ease-in-out infinite;
 }
 
 .title:hover {
-   text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
-   color: #d0aaff;
+    text-shadow: 0 0 20px #d0aaff, 0 0 30px #d0aaff, 0 0 50px #d0aaff;
+    color: #d0aaff;
 }
 
-/* === Smooth Floating Animation === */
+/* === Wave Animation === */
 @keyframes waveFloat {
-   0% { transform: translateY(0); }
-   50% { transform: translateY(-4px); }
-   100% { transform: translateY(0); }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
 }
 
 /* === Search Bar Styling === */
 .search-home {
-   flex: 1;
-   max-width: 400px;
-   border: 2px solid transparent;
-   border-bottom: 2px solid var(--text-primary);
-   background: var(--background-input);
-   padding: 10px;
-   color: var(--text-primary);
-   font-size: 1.1rem;
-   transition: box-shadow 0.3s ease, border-bottom 0.3s ease;
-   z-index: 0;
+    flex: 1;
+    max-width: 400px;
+    border: 2px solid transparent;
+    border-bottom: 2px solid var(--text-primary);
+    background: var(--background-input);
+    padding: 10px;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    transition: box-shadow 0.3s ease, border-bottom 0.3s ease;
+    z-index: 0;
 }
 
 .search-home:focus,
 .search-home:hover {
-   outline: none;
-   border-bottom: 2px solid #d0aaff;
-   box-shadow: 0 0 8px #d0aaff;
+    outline: none;
+    border-bottom: 2px solid #d0aaff;
+    box-shadow: 0 0 6px #d0aaff;
 }
