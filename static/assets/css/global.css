@@ -135,6 +135,10 @@ body {
    font-size: 1.1rem;
    transition: all 0.3s ease;
 }
+   .search-home:hover {
+   color: #d0aaff;
+   text-shadow: 0 0 5px #d0aaff, 0 0 15px #d0aaff, 0 0 35px #d0aaff; /* Intense glow */
+}
 
 .search-home:focus {
    border-bottom: 2px solid #4caf50;
