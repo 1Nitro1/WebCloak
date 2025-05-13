@@ -57,7 +57,7 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
-   animation: moveBackground 15s ease-in-out infinite; /* Faster and smoother animation */
+   animation: moveBackground 10s ease-in-out infinite; /* Faster and smoother animation */
 }
 
 @keyframes moveBackground {
@@ -65,13 +65,13 @@ body {
       background-position: center center; /* Start at the center */
    }
    25% {
-      background-position: center calc(50% + 15%); /* Move down */
+      background-position: center calc(50% + 20%); /* Move down */
    }
    50% {
-      background-position: center calc(50% - 15%); /* Move up */
+      background-position: center calc(50% - 20%); /* Move up */
    }
    75% {
-      background-position: center calc(50% + 15%); /* Move down again */
+      background-position: center calc(50% + 20%); /* Move down again */
    }
    100% {
       background-position: center center; /* Back to the center */
