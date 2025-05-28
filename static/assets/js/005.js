@@ -31,13 +31,15 @@ if (form && input) {
     }
   });
 }
+
 function processUrl(value, path) {
   let url = value.trim();
-  const engine = localStorage.getItem("engine");
-  const searchUrl = engine ? engine : "https://www.google.com/search?q=";
+
+  // Default to Brave Search if no engine is stored
+  const searchUrl = localStorage.getItem("engine") || "https://search.brave.com/search?q=";
 
   if (!isUrl(url)) {
-    url = searchUrl + url;
+    url = searchUrl + encodeURIComponent(url); // URL-encode search terms!
   } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
     url = `https://${url}`;
   }
@@ -67,11 +69,7 @@ function dy(value) {
 }
 
 function isUrl(val = "") {
-  if (
-    /^http(s?):\/\//.test(val) ||
-    (val.includes(".") && val.substr(0, 1) !== " ")
-  ) {
-    return true;
-  }
-  return false;
+  // Improved detection to avoid false positives
+  return /^http(s?):\/\//.test(val) || (val.includes(".") && !val.includes(" "));
 }
+
