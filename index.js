@@ -85,31 +85,30 @@ app.get("/e/*", async (req, res, next) => {
   }
 });
 
+// ======= HERE IS THE SEARCH REDIRECT SNIPPET =======
+app.get("/search", (req, res) => {
+  const query = req.query.q || "";
+  if (!query) {
+    return res.redirect("/"); // No query? Bounce home
+  }
+
+  // Redirect to Brave Search (change this to your fave)
+  const braveSearchUrl = `https://search.brave.com/search?q=${encodeURIComponent(query)}`;
+  res.redirect(braveSearchUrl);
+});
+// ======= END SEARCH REDIRECT SNIPPET =======
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, "static")));
+/* if (process.env.MASQR === "true") {
+  console.log(chalk.green("Masqr is enabled"));
+  setupMasqr(app);
+} */
 
-// ==== HERE IS THE NEW REDIRECT MIDDLEWARE ====
-app.use((req, res, next) => {
-  if (req.url.startsWith("/search")) {
-    try {
-      // Construct full URL to access query params
-      const fullUrl = new URL(req.protocol + "://" + req.get("host") + req.originalUrl);
-      const query = fullUrl.searchParams.get("q");
-      if (query) {
-        // Redirect to Brave search with the same query
-        return res.redirect(`https://search.brave.com/search?q=${encodeURIComponent(query)}`);
-      }
-    } catch {
-      // If something goes wrong, just continue normally
-      return next();
-    }
-  }
-  next();
-});
-// ==== END OF REDIRECT MIDDLEWARE ====
+app.use(express.static(path.join(__dirname, "static")));
+app.use("/ca", cors({ origin: true }));
 
 const routes = [
   { path: "/b", file: "apps.html" },
