@@ -89,13 +89,27 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-/* if (process.env.MASQR === "true") {
-  console.log(chalk.green("Masqr is enabled"));
-  setupMasqr(app);
-} */
-
 app.use(express.static(path.join(__dirname, "static")));
-app.use("/ca", cors({ origin: true }));
+
+// ==== HERE IS THE NEW REDIRECT MIDDLEWARE ====
+app.use((req, res, next) => {
+  if (req.url.startsWith("/search")) {
+    try {
+      // Construct full URL to access query params
+      const fullUrl = new URL(req.protocol + "://" + req.get("host") + req.originalUrl);
+      const query = fullUrl.searchParams.get("q");
+      if (query) {
+        // Redirect to Brave search with the same query
+        return res.redirect(`https://search.brave.com/search?q=${encodeURIComponent(query)}`);
+      }
+    } catch {
+      // If something goes wrong, just continue normally
+      return next();
+    }
+  }
+  next();
+});
+// ==== END OF REDIRECT MIDDLEWARE ====
 
 const routes = [
   { path: "/b", file: "apps.html" },
